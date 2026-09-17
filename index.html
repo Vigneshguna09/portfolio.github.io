@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vignesh Gunasekaran | Senior QA Lead & IVR Automation Specialist</title>
+  <meta name="description" content="Portfolio of Vignesh Gunasekaran - Senior QA Lead & IVR / Cyara Automation Specialist with 9+ years experience." />
+  
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              900: '#1e1b4b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-slate-900/85 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-extrabold text-sm">VG</span>
+        <span>Vignesh<span class="text-indigo-400">.</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-indigo-400 transition">About</a>
+        <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+        <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
+        <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
+        <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="mailto:Vigneshgunasekaran09@gmail.com" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition shadow-sm shadow-indigo-600/30">
+          <i data-lucide="mail" class="w-4 h-4"></i> Get in Touch
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-900 px-6 py-4 space-y-3 text-sm font-medium text-slate-300">
+      <a href="#about" class="block hover:text-indigo-400">About</a>
+      <a href="#skills" class="block hover:text-indigo-400">Skills</a>
+      <a href="#experience" class="block hover:text-indigo-400">Experience</a>
+      <a href="#projects" class="block hover:text-indigo-400">Projects</a>
+      <a href="#contact" class="block hover:text-indigo-400">Contact</a>
+      <a href="mailto:Vigneshgunasekaran09@gmail.com" class="block text-indigo-400 pt-2 font-semibold">Email Directly →</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="relative py-20 sm:py-28 overflow-hidden">
+      <div class="absolute inset-0 -z-10 flex items-center justify-center opacity-25">
+        <div class="w-[600px] h-[600px] bg-indigo-600 rounded-full blur-[140px]"></div>
+      </div>
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Notice badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Available for Immediate / Early Joining (Serving Notice Period)
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
+          Senior QA Lead &amp; <br class="hidden sm:inline" />
+          <span class="bg-gradient-to-r from-indigo-400 via-sky-300 to-indigo-200 bg-clip-text text-transparent">
+            IVR &amp; Cyara Automation Specialist
+          </span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-base sm:text-lg text-slate-400 mb-8 leading-relaxed">
+          9+ years architecting and leading end-to-end Voice, CTI, and Conversational AI automation platforms. Proven success steering quality engineering for Telecom and Healthcare leaders like Charter Spectrum and Cigna.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#experience" class="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/20 flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-4 h-4"></i> View Work Experience
+          </a>
+          <a href="#contact" class="px-6 py-3 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition flex items-center gap-2">
+            <i data-lucide="phone-call" class="w-4 h-4"></i> Recruiter Contact Info
+          </a>
+        </div>
+
+        <!-- Quick Summary Stats -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-16 pt-12 border-t border-slate-800/80 text-left">
+          <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+            <div class="text-2xl sm:text-3xl font-bold text-white">9+</div>
+            <div class="text-xs text-slate-400 mt-1">Years Experience</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+            <div class="text-2xl sm:text-3xl font-bold text-white">Cyara Suite</div>
+            <div class="text-xs text-slate-400 mt-1">Velocity, Cruncher, Pulse</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+            <div class="text-2xl sm:text-3xl font-bold text-white">Fortune 500</div>
+            <div class="text-xs text-slate-400 mt-1">Telecom &amp; Healthcare</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-800">
+            <div class="text-2xl sm:text-3xl font-bold text-white">CSA &amp; Claude</div>
+            <div class="text-xs text-slate-400 mt-1">Certified Professional</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Skills & ATS Competencies -->
+    <section id="skills" class="py-16 bg-slate-950/60 border-t border-b border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Core Competencies</h2>
+          <p class="text-2xl sm:text-3xl font-bold text-white">Technical Arsenal &amp; QA Specializations</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Skill Card 1 -->
+          <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">Cyara Test Automation</h3>
+            <ul class="text-xs text-slate-400 space-y-1.5 leading-relaxed">
+              <li>• Cyara Velocity (Automation scripts & regression)</li>
+              <li>• Cyara Cruncher (Stress, load & performance testing)</li>
+              <li>• Cyara Pulse (Real-time operational monitoring)</li>
+              <li>• Call campaign execution & voice validation</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 2 -->
+          <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center mb-4">
+              <i data-lucide="phone-forwarded" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">IVR &amp; Voice Engineering</h3>
+            <ul class="text-xs text-slate-400 space-y-1.5 leading-relaxed">
+              <li>• Inbound & Outbound complex call flows</li>
+              <li>• Intelligent Call Routing & CTI Integration</li>
+              <li>• ASR & DTMF utterance verification</li>
+              <li>• Bilingual validation (English / Spanish)</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 3 -->
+          <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">Conversational AI &amp; NLU</h3>
+            <ul class="text-xs text-slate-400 space-y-1.5 leading-relaxed">
+              <li>• NLU Intent Batch Testing & Entity Mapping</li>
+              <li>• KORE.AI Platform & Nuance Engine</li>
+              <li>• Amazon Connect, Genesys Cloud, Avaya</li>
+              <li>• Conversational Bot journey validation</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 4 -->
+          <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">API, DB &amp; Backend</h3>
+            <ul class="text-xs text-slate-400 space-y-1.5 leading-relaxed">
+              <li>• REST & SOAP Web Services testing via Postman</li>
+              <li>• SQL Queries & database data verification</li>
+              <li>• TriZetto Facets (claims, benefits, eligibility)</li>
+              <li>• Deep Log Analysis (Call IDs, MobaXterm)</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 5 -->
+          <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">QA Leadership &amp; Delivery</h3>
+            <ul class="text-xs text-slate-400 space-y-1.5 leading-relaxed">
+              <li>• Agile (Scrum) Sprint planning & delivery</li>
+              <li>• Production Verification (PVT) & Pilot testing</li>
+              <li>• Defect Triage, RTM, & QA Metrics reporting</li>
+              <li>• Mentoring & managing distributed QA teams</li>
+            </ul>
+          </div>
+
+          <!-- Skill Card 6 -->
+          <div class="p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition">
+            <div class="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center mb-4">
+              <i data-lucide="award" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">Certifications &amp; Degrees</h3>
+            <ul class="text-xs text-slate-400 space-y-1.5 leading-relaxed">
+              <li>• Claude Certified Associate - Foundations (Anthropic)</li>
+              <li>• Certified System Architect (CSA) - Pega Systems</li>
+              <li>• Scrum Foundation & C/C++ Certified</li>
+              <li>• B.Tech in Electronics &amp; Communication Engg</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Timeline -->
+    <section id="experience" class="py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Career Journey</h2>
+          <p class="text-3xl font-bold text-white">Work Experience &amp; Impact</p>
+        </div>
+
+        <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+          
+          <!-- Role 1 -->
+          <div class="relative pl-6 md:pl-8">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-slate-900"></span>
+            
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">Senior Associate Consultant (QA Lead)</h3>
+                <p class="text-sm font-medium text-indigo-400">Infosys Limited <span class="text-slate-500">• Client: Charter Communications (Spectrum)</span></p>
+              </div>
+              <span class="text-xs font-medium text-slate-400 mt-1 sm:mt-0 bg-slate-800 px-2.5 py-1 rounded">Feb 2025 – Present | Chennai</span>
+            </div>
+
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-2 mt-4 leading-relaxed list-disc list-outside pl-4 marker:text-indigo-400">
+              <li>Sole QA Lead architecting and executing automated test suites via Cyara Automation across 3 enterprise Conversational AI Bots operating on KORE.AI and Nuance engines.</li>
+              <li>Executed load-balance and stress testing using Cyara Cruncher while establishing real-time operational monitoring via Cyara Pulse Campaigns.</li>
+              <li>Served as single POC for Payment and Billing BOT modules; led a 5-member QA team, managing task allocations, test plans, code/test reviews, PVT, and Pilot testing.</li>
+              <li>Conducted NLU batch testing, utterance mapping, and intent recognition validation to ensure high precision natural language understanding.</li>
+              <li>Validated REST/SOAP Web Services using Postman and debugged complex call routing via Call IDs, Cyara voice recordings, and SQL logs.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="relative pl-6 md:pl-8">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-900"></span>
+            
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">Senior Software Engineer / Quality Engineering Senior Analyst</h3>
+                <p class="text-sm font-medium text-indigo-400">Wipro Ltd <span class="text-slate-500">• Client: Cigna Health Insurance</span></p>
+              </div>
+              <span class="text-xs font-medium text-slate-400 mt-1 sm:mt-0 bg-slate-800 px-2.5 py-1 rounded">Jun 2021 – Jan 2025 | Chennai</span>
+            </div>
+
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-2 mt-4 leading-relaxed list-disc list-outside pl-4 marker:text-indigo-400">
+              <li>Engineered functional and regression automated test suites using Cyara Velocity and Cruncher, significantly reducing turnaround times.</li>
+              <li>Analyzed complex design specifications, resolved flow gaps, and validated health insurance IVR contact journeys, intelligent agent routing, and CTI integration.</li>
+              <li>Verified backend member eligibility, claims, and benefits data synchronization between IVR platforms and TriZetto Facets.</li>
+              <li>Oversaw defect lifecycles in JIRA, led grooming sessions, authored test strategy artifacts, and presented daily QA metrics to stakeholders.</li>
+            </ul>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="relative pl-6 md:pl-8">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-900"></span>
+            
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">System Analyst / Test Engineer</h3>
+                <p class="text-sm font-medium text-indigo-400">Sensiple Software Solutions <span class="text-slate-500">• Client: CVS Pharmacy</span></p>
+              </div>
+              <span class="text-xs font-medium text-slate-400 mt-1 sm:mt-0 bg-slate-800 px-2.5 py-1 rounded">Feb 2017 – Sep 2020 | Chennai</span>
+            </div>
+
+            <ul class="text-xs sm:text-sm text-slate-300 space-y-2 mt-4 leading-relaxed list-disc list-outside pl-4 marker:text-indigo-400">
+              <li>Validated inbound call flows for bilingual (English/Spanish) IVR applications using ASR (Speech Recognition) and DTMF utterances.</li>
+              <li>Tested skill-based agent call routing across Genesys Cloud and Avaya softphone environments.</li>
+              <li>Authored RTM, Test Plans, and Work Breakdown Structures (WBS); led daily Defect Triage sessions and produced executive Test Summary Reports.</li>
+            </ul>
+          </div>
+
+          <!-- Role 4 -->
+          <div class="relative pl-6 md:pl-8">
+            <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-700 ring-4 ring-slate-900"></span>
+            
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+              <div>
+                <h3 class="text-lg font-bold text-white">Test Engineer</h3>
+                <p class="text-sm font-medium text-indigo-400">Digient Technology</p>
+              </div>
+              <span class="text-xs font-medium text-slate-400 mt-1 sm:mt-0 bg-slate-800 px-2.5 py-1 rounded">9 Months | Chennai</span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 mt-3 leading-relaxed">
+              Executed functional, web, and desktop application testing supporting back-office operations for high-uptime enterprise environments.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Featured Projects -->
+    <section id="projects" class="py-16 bg-slate-950/60 border-t border-b border-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Case Studies</h2>
+          <p class="text-3xl font-bold text-white">Key Enterprise Projects</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Project 1 -->
+          <div class="flex flex-col justify-between p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
+            <div>
+              <div class="flex items-center justify-between text-xs text-indigo-400 font-semibold mb-3">
+                <span>Telecom Leader</span>
+                <span class="bg-indigo-500/10 px-2 py-0.5 rounded">Infosys</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Charter Spectrum Conversational Bot QA</h3>
+              <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                Architected full automation for 3 enterprise Conversational AI Bots on KORE.AI & Nuance engines. Validated Payment and Billing modules through Cyara Velocity and Cruncher load suites.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Cyara Pulse</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">KORE.AI</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">NLU Testing</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Postman REST</span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="flex flex-col justify-between p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sky-400 font-semibold mb-3">
+                <span>Healthcare & Insurance</span>
+                <span class="bg-sky-500/10 px-2 py-0.5 rounded">Wipro</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">Cigna IVR &amp; Facets Platform Integration</h3>
+              <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                Standardized regression test suites using Cyara Velocity. Validated real-time member eligibility, claim status, and benefits data between voice portals and TriZetto Facets backend.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">TriZetto Facets</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">CTI Routing</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Cyara Cruncher</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">JIRA</span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="flex flex-col justify-between p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 transition">
+            <div>
+              <div class="flex items-center justify-between text-xs text-emerald-400 font-semibold mb-3">
+                <span>Pharmacy & Retail Care</span>
+                <span class="bg-emerald-500/10 px-2 py-0.5 rounded">Sensiple</span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">CVS Bilingual Speech Recognition IVR</h3>
+              <p class="text-xs text-slate-400 mb-4 leading-relaxed">
+                Led end-to-end testing for high-volume English/Spanish customer care routing. Ensured accurate speech recognition (ASR), DTMF validation, and Genesys/Avaya softphone delivery.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Genesys Cloud</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Avaya</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">ASR/DTMF</span>
+              <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">RTM & Triage</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Recruiter & Contact Section -->
+    <section id="contact" class="py-20">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">Get In Touch</h2>
+        <p class="text-3xl font-bold text-white mb-4">Let's Connect for Upcoming Opportunities</p>
+        <p class="text-sm text-slate-400 max-w-xl mx-auto mb-10">
+          Actively available to discuss Senior QA Lead, IVR Test Architect, and Conversational AI Automation roles.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left mb-10">
+          <a href="mailto:Vigneshgunasekaran09@gmail.com" class="p-5 rounded-xl bg-slate-800/60 border border-slate-700/80 hover:border-indigo-500 transition group">
+            <i data-lucide="mail" class="w-6 h-6 text-indigo-400 mb-3 group-hover:scale-110 transition"></i>
+            <div class="text-xs text-slate-400 font-medium">Direct Email</div>
+            <div class="text-sm font-semibold text-white truncate">Vigneshgunasekaran09@gmail.com</div>
+          </a>
+
+          <a href="tel:+919500259538" class="p-5 rounded-xl bg-slate-800/60 border border-slate-700/80 hover:border-indigo-500 transition group">
+            <i data-lucide="phone" class="w-6 h-6 text-emerald-400 mb-3 group-hover:scale-110 transition"></i>
+            <div class="text-xs text-slate-400 font-medium">Phone &amp; WhatsApp</div>
+            <div class="text-sm font-semibold text-white">+91 95002 59538</div>
+          </a>
+
+          <div class="p-5 rounded-xl bg-slate-800/60 border border-slate-700/80">
+            <i data-lucide="map-pin" class="w-6 h-6 text-sky-400 mb-3"></i>
+            <div class="text-xs text-slate-400 font-medium">Location &amp; Availability</div>
+            <div class="text-sm font-semibold text-white">Chennai / Open to Hybrid &amp; Remote</div>
+          </div>
+        </div>
+
+        <div class="inline-flex flex-wrap items-center justify-center gap-4">
+          <a href="mailto:Vigneshgunasekaran09@gmail.com?subject=Job%20Opportunity%20-%20QA%20Lead" class="px-8 py-3.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-lg shadow-indigo-600/30">
+            Send Email Invitation
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-500">
+    <p>© 2026 Vignesh Gunasekaran. All rights reserved.</p>
+  </footer>
+
+  <!-- Script for Lucide icons & Mobile toggle -->
+  <script>
+    lucide.createIcons();
+
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
