@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignesh Gunasekaran | Senior IVR QA Lead & Conversational AI Specialist</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#0f172a',
+                            950: '#020617',
+                        },
+                        cyan: {
+                            450: '#00d2ff',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+        }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-glow {
+            box-shadow: 0 0 50px -10px rgba(14, 165, 233, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7;
+        }
+
+        /* Pulse animation for available badge */
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .pulse-badge {
+            animation: pulse-ring 2.5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-slate-950 overflow-x-hidden">
+
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 ease-in-out flex items-center gap-3 px-5 py-3.5 rounded-xl bg-slate-900 border border-cyan-500/40 text-cyan-400 shadow-2xl backdrop-blur-md">
+        <i class="ph-bold ph-check-circle text-xl"></i>
+        <span id="toast-message" class="text-sm font-medium text-slate-100">Copied to clipboard!</span>
+    </div>
+
+    <header class="fixed top-0 left-0 w-full z-40 glass-card border-b border-slate-800/80 bg-slate-950/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#about" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                        VG
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">Vignesh G.</span>
+                        <span class="text-xs text-slate-400 font-mono tracking-wider">QA LEAD & ARCHITECT</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">About</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Core Competencies</a>
+                    <a href="#experience" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Experience</a>
+                    <a href="#certifications" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Certifications</a>
+                    <a href="#contact" class="px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 hover:from-cyan-400 hover:to-blue-500 transition-all shadow-md shadow-cyan-500/10">
+                        Hire Me
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-slate-800 focus:outline-none">
+                    <i class="ph-bold ph-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800/60 bg-slate-950/95 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-900">About</a>
+            <a href="#skills" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-900">Core Competencies</a>
+            <a href="#experience" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-900">Experience</a>
+            <a href="#certifications" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-900">Certifications</a>
+            <a href="#contact" class="mobile-nav-link block w-full text-center mt-4 px-4 py-2.5 rounded-lg text-sm font-semibold bg-cyan-500 text-slate-950">Hire Me</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <section id="about" class="relative py-20 lg:py-28 overflow-hidden">
+            <!-- Background Radial Glow -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-8 space-y-6 text-center lg:text-left">
+                        <!-- Status Badge -->
+                        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full glass-card border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-badge"></span>
+                            <span>Immediate Joiner</span>
+                            <span class="text-slate-600">|</span>
+                            <span class="text-slate-300 font-normal normal-case">Chennai, TN, India</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 tracking-tight leading-tight">
+                            Vignesh Gunasekaran
+                        </h1>
+
+                        <p class="text-xl sm:text-2xl font-semibold gradient-text">
+                            Senior QA Lead | IVR Automation, Amazon Connect, Cyara & Conversational AI Specialist
+                        </p>
+
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-3xl">
+                            Accomplished Quality Assurance Lead & IVR Architect with <span class="text-cyan-400 font-semibold">9+ years of experience</span> driving end-to-end QA frameworks for enterprise-scale Contact Centers, Cloud Telephony, Voice, CTI, and Conversational AI platforms. Specialized in automated testing with <span class="text-cyan-400 font-semibold">Cyara</span> and cloud migrations to <span class="text-cyan-400 font-semibold">Amazon Connect</span>.
+                        </p>
+
+                        <!-- Highlight Metrics Grid -->
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+                            <div class="glass-card p-4 rounded-xl text-center lg:text-left border-l-2 border-l-cyan-400">
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-slate-100">9+</span>
+                                <span class="text-xs text-slate-400 font-medium">Years Experience</span>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl text-center lg:text-left border-l-2 border-l-indigo-400">
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-slate-100">100+</span>
+                                <span class="text-xs text-slate-400 font-medium">Cyara Test Suites</span>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl text-center lg:text-left border-l-2 border-l-purple-400">
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-slate-100">98%+</span>
+                                <span class="text-xs text-slate-400 font-medium">NLU Intent Accuracy</span>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl text-center lg:text-left border-l-2 border-l-emerald-400">
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-slate-100">+45%</span>
+                                <span class="text-xs text-slate-400 font-medium">Automation Coverage</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Actions -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#contact" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold hover:from-cyan-400 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+                                <i class="ph-bold ph-envelope-simple text-lg"></i>
+                                <span>Get In Touch</span>
+                            </a>
+                            <button onclick="copyToClipboard('Vigneshgunasekaran09@gmail.com', 'Email address copied!')" class="px-5 py-3 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700 transition-all flex items-center gap-2 group">
+                                <i class="ph-bold ph-copy text-lg text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                                <span>Copy Email</span>
+                            </button>
+                            <button onclick="copyToClipboard('+919500259538', 'Phone number copied!')" class="px-5 py-3 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700 transition-all flex items-center gap-2 group">
+                                <i class="ph-bold ph-phone text-lg text-cyan-400 group-hover:scale-110 transition-transform"></i>
+                                <span>+91-9500259538</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Hero Quick Contact & Highlight Card -->
+                    <div class="lg:col-span-4">
+                        <div class="glass-card p-6 sm:p-8 rounded-2xl relative overflow-hidden gradient-glow">
+                            <div class="absolute -right-8 -top-8 w-32 h-32 bg-cyan-500/10 rounded-full blur-xl"></div>
+                            
+                            <h3 class="text-lg font-bold text-slate-100 mb-6 flex items-center gap-2">
+                                <i class="ph-bold ph-lightning text-cyan-400"></i> Domain Specializations
+                            </h3>
+
+                            <ul class="space-y-4 text-sm text-slate-300">
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 p-1 rounded bg-cyan-500/10 text-cyan-400">
+                                        <i class="ph-bold ph-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-slate-100 block">Amazon Connect & Cloud Migration</strong>
+                                        Expert in Contact Flows, Lex, Contact Lens & Lambda.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 p-1 rounded bg-cyan-500/10 text-cyan-400">
+                                        <i class="ph-bold ph-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-slate-100 block">Cyara Automated Suite</strong>
+                                        Velocity, Cruncher (Load/Stress), Pulse Synthetic Monitoring.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 p-1 rounded bg-cyan-500/10 text-cyan-400">
+                                        <i class="ph-bold ph-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-slate-100 block">Conversational AI & NLU</strong>
+                                        Utterance mapping, intent recognition validation & accuracy tuning.
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="mt-1 p-1 rounded bg-cyan-500/10 text-cyan-400">
+                                        <i class="ph-bold ph-check text-xs"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-slate-100 block">Backend & Health Systems</strong>
+                                        REST/SOAP, SQL, CloudWatch & TriZetto Facets integration testing.
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                                <span>Client Domains:</span>
+                                <span class="font-semibold text-slate-200">Telecom & Healthcare</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 bg-slate-950/50 relative border-t border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase mb-2">Technical Expertise</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-100">Core Competencies & Skills</p>
+                    <p class="text-slate-400 mt-3 text-sm sm:text-base">Comprehensive matrix of tools, frameworks, and testing methodologies.</p>
+                </div>
+
+                <!-- Skill Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 mb-10" id="skill-tabs">
+                    <button onclick="filterSkills('all')" class="tab-btn active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20" data-category="all">
+                        All Competencies
+                    </button>
+                    <button onclick="filterSkills('cloud')" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all glass-card hover:bg-slate-800 text-slate-300" data-category="cloud">
+                        Cloud Telephony & IVR
+                    </button>
+                    <button onclick="filterSkills('cyara')" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all glass-card hover:bg-slate-800 text-slate-300" data-category="cyara">
+                        Cyara Test Automation
+                    </button>
+                    <button onclick="filterSkills('ai')" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all glass-card hover:bg-slate-800 text-slate-300" data-category="ai">
+                        Conversational AI & NLU
+                    </button>
+                    <button onclick="filterSkills('backend')" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all glass-card hover:bg-slate-800 text-slate-300" data-category="backend">
+                        API, DB & Backend QA
+                    </button>
+                    <button onclick="filterSkills('methodology')" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all glass-card hover:bg-slate-800 text-slate-300" data-category="methodology">
+                        Methodologies & Governance
+                    </button>
+                </div>
+
+                <!-- Skill Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-grid">
+                    
+                    <!-- Card 1: Cloud Telephony -->
+                    <div class="skill-card glass-card glass-card-hover p-6 rounded-2xl" data-category="cloud">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-5 text-2xl">
+                            <i class="ph-bold ph-cloud-arrow-up"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-3">Cloud Contact Center & IVR</h3>
+                        <p class="text-xs text-slate-400 mb-4 leading-relaxed">End-to-end design, flow architecture verification, and telephony routing.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-cyan-300 border border-slate-700">Amazon Connect</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Contact Flows</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">AWS Lambda</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Genesys Cloud CX</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Avaya Aura</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Intelligent Routing</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">CTI Screen Pop</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">DTMF & ASR</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Cyara Automation -->
+                    <div class="skill-card glass-card glass-card-hover p-6 rounded-2xl" data-category="cyara">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-5 text-2xl">
+                            <i class="ph-bold ph-cpu"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-3">Cyara Test Automation</h3>
+                        <p class="text-xs text-slate-400 mb-4 leading-relaxed">Automated voice regression, stress campaign management, and synthetic monitoring.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-indigo-300 border border-slate-700">Cyara Velocity</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-indigo-300 border border-slate-700">Cyara Cruncher</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-indigo-300 border border-slate-700">Cyara Pulse</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Load & Stress Testing</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Voice Automation</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Campaign Management</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Conversational AI -->
+                    <div class="skill-card glass-card glass-card-hover p-6 rounded-2xl" data-category="ai">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-5 text-2xl">
+                            <i class="ph-bold ph-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-3">Conversational AI & NLU</h3>
+                        <p class="text-xs text-slate-400 mb-4 leading-relaxed">Natural Language Understanding optimization, intent recognition, and voice bots.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-purple-300 border border-slate-700">Amazon Lex</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-purple-300 border border-slate-700">KORE.AI Platform</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Nuance Engine</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">NLU Batch Testing</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Utterance Optimization</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Multilingual (English/Spanish)</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: API & Backend QA -->
+                    <div class="skill-card glass-card glass-card-hover p-6 rounded-2xl" data-category="backend">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5 text-2xl">
+                            <i class="ph-bold ph-database"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-3">API, DB & Backend QA</h3>
+                        <p class="text-xs text-slate-400 mb-4 leading-relaxed">Services validation, log tracing, and core health system database integrations.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-emerald-300 border border-slate-700">REST & SOAP Web Services</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-emerald-300 border border-slate-700">Postman</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">AWS CloudWatch</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">SQL Querying</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Log Analysis (MobaXterm)</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">TriZetto Facets</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Methodologies -->
+                    <div class="skill-card glass-card glass-card-hover p-6 rounded-2xl md:col-span-2 lg:col-span-2" data-category="methodology">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-5 text-2xl">
+                            <i class="ph-bold ph-kanban"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-3">Testing Methodologies & Governance</h3>
+                        <p class="text-xs text-slate-400 mb-4 leading-relaxed">Structured enterprise testing life cycles, defect management, and agile delivery leadership.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-amber-300 border border-slate-700">System Integration Testing (SIT)</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-amber-300 border border-slate-700">Production Verification (PVT)</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Cloud Migration Testing</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Defect Triage Leadership</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Requirements Traceability Matrix (RTM)</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Agile (Scrum)</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">JIRA</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-xs font-mono text-slate-300 border border-slate-700">Test Strategy & Execution</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="experience" class="py-20 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase mb-2">Track Record</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-100">Professional Experience</p>
+                    <p class="text-slate-400 mt-3 text-sm sm:text-base">9+ years driving quality across premier Telecom and Healthcare organizations.</p>
+                </div>
+
+                <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
+
+                    <!-- Experience Item 1 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <!-- Timeline Dot -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                        
+                        <!-- Floating Date Label for Desktop -->
+                        <div class="hidden md:block absolute -left-36 top-1 text-right w-28 text-xs font-mono text-cyan-400 font-semibold">
+                            Feb 2025 – Present
+                        </div>
+
+                        <div class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="md:hidden text-xs font-mono text-cyan-400 font-semibold">Feb 2025 – Present</span>
+                                <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold uppercase tracking-wider">Current Role</span>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-100">Senior Associate Consultant (QA Lead)</h3>
+                            <div class="text-slate-300 font-medium text-sm sm:text-base mb-4">
+                                Infosys Limited <span class="text-slate-500">•</span> Client: <span class="text-cyan-300">Charter Communications (Spectrum)</span>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-slate-300 mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Cyara Test Automation Architecture:</strong> Architected and executed 100+ automated test suites using Cyara Velocity across 3 enterprise Conversational AI Bots operating on KORE.AI and Nuance engines, boosting automated test coverage by 45%.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Performance & Stress Testing:</strong> Spearheaded high-volume load-balance and stress testing campaigns utilizing Cyara Cruncher; established 24/7 real-time synthetic monitoring via Cyara Pulse.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">NLU & Intent Batch Validation:</strong> Conducted comprehensive NLU batch testing, utterance mapping, and intent recognition validation, optimizing natural language engine accuracy to 98%+.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">QA Leadership & Delivery:</strong> Primary QA Lead POC for Payment and Billing BOT modules; managed a 5-member QA team, test plans, code/test reviews, PVT, and Pilot releases in Agile/Scrum.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">API & Backend Verification:</strong> Validated REST/SOAP Web Services via Postman and debugged complex CTI call routing using Call IDs, Cyara voice recordings, and SQL server logs.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Cyara Velocity</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Cyara Cruncher</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">KORE.AI</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Nuance Engine</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">NLU Validation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-slate-950 group-hover:scale-125 group-hover:bg-cyan-400 transition-transform"></div>
+                        
+                        <div class="hidden md:block absolute -left-36 top-1 text-right w-28 text-xs font-mono text-slate-400 font-semibold">
+                            Jun 2021 – Jan 2025
+                        </div>
+
+                        <div class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="md:hidden text-xs font-mono text-slate-400 font-semibold">Jun 2021 – Jan 2025</span>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-100">Senior Software Engineer / QE Senior Analyst</h3>
+                            <div class="text-slate-300 font-medium text-sm sm:text-base mb-4">
+                                Wipro Ltd <span class="text-slate-500">•</span> Client: <span class="text-cyan-300">Cigna Health Insurance</span>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-slate-300 mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Amazon Connect Platform & Flow Testing:</strong> Led end-to-end quality assurance for Cigna's cloud contact center migration to Amazon Connect; validated complex Contact Flows, routing profiles, queue rules, and AWS Lambda backend data integrations.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Amazon Connect Analytics & Call Quality:</strong> Verified Contact Lens analytics, real-time sentiment analysis, transcript accuracy, call recording storage in S3, and agent CTI Softphone screen pop triggers.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Intelligent Routing & CTI Validation:</strong> Analyzed complex call flow specifications, identified architecture gaps, and validated health insurance IVR contact journeys, dynamic skills-based routing, and agent transfers across Amazon Connect and Genesys Cloud.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Facets Backend Integration:</strong> Executed SQL-driven backend validation ensuring seamless data synchronization of member eligibility, claims, and benefits between Amazon Connect IVR workflows, AWS Lambda, and TriZetto Facets core platform.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Defect Triage & Governance:</strong> Managed full defect lifecycles in JIRA, led grooming sessions, prepared Requirements Traceability Matrices (RTM), monitored CloudWatch logs, and reported daily QA executive dashboards.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Amazon Connect</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Contact Lens</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">AWS Lambda</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Genesys Cloud</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">TriZetto Facets</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-slate-950 group-hover:scale-125 group-hover:bg-cyan-400 transition-transform"></div>
+                        
+                        <div class="hidden md:block absolute -left-36 top-1 text-right w-28 text-xs font-mono text-slate-400 font-semibold">
+                            Feb 2017 – Sep 2020
+                        </div>
+
+                        <div class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="md:hidden text-xs font-mono text-slate-400 font-semibold">Feb 2017 – Sep 2020</span>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-100">System Analyst / Test Engineer</h3>
+                            <div class="text-slate-300 font-medium text-sm sm:text-base mb-4">
+                                Sensiple Software Solutions <span class="text-slate-500">•</span> Client: <span class="text-cyan-300">CVS Pharmacy</span>
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-slate-300 mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Bilingual IVR & Speech Testing:</strong> Validated inbound/outbound call flows for high-volume bilingual (English/Spanish) IVR applications using Speech Recognition (ASR) and DTMF utterance test scripts.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Skill-Based Routing Validation:</strong> Tested skill-based agent call routing, whisper announcements, and CTI screen pop triggers across Genesys Cloud and Avaya softphone environments.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Test Artifacts & Execution:</strong> Authored Requirements Traceability Matrix (RTM), Test Strategy, and Work Breakdown Structures (WBS); led daily defect triage sessions and delivered final Test Summary Reports.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Bilingual Testing</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">ASR & DTMF Utterances</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Genesys Cloud</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Avaya</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 4 -->
+                    <div class="relative pl-8 md:pl-10 group">
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-slate-950 group-hover:scale-125 group-hover:bg-cyan-400 transition-transform"></div>
+                        
+                        <div class="hidden md:block absolute -left-36 top-1 text-right w-28 text-xs font-mono text-slate-400 font-semibold">
+                            May 2016 – Jan 2017
+                        </div>
+
+                        <div class="glass-card glass-card-hover p-6 sm:p-8 rounded-2xl">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <span class="md:hidden text-xs font-mono text-slate-400 font-semibold">May 2016 – Jan 2017</span>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-100">Test Engineer</h3>
+                            <div class="text-slate-300 font-medium text-sm sm:text-base mb-4">
+                                Digient Technology
+                            </div>
+
+                            <ul class="space-y-3 text-sm text-slate-300 mb-6">
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Cross-Platform Functional Testing:</strong> Executed comprehensive functional, UI, and regression test suites for mobile (iOS/Android) and web applications, ensuring zero critical defect leakage.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <i class="ph-bold ph-caret-right text-cyan-400 mt-1 shrink-0"></i>
+                                    <span><strong class="text-slate-100">Backend Administration & Verification:</strong> Administered backend portal operations, user account configurations, security access controls, and transaction workflow validations.</span>
+                                </li>
+                            </ul>
+
+                            <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Mobile QA (iOS/Android)</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Web Testing</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-800/80 text-xs font-mono text-slate-300">Regression Suites</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="certifications" class="py-20 bg-slate-950/50 relative border-t border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase mb-2">Qualifications</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-100">Certifications & Education</p>
+                    <p class="text-slate-400 mt-3 text-sm sm:text-base">Continuous learning and formal engineering education.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Professional Certifications Card -->
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl relative">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 text-2xl">
+                                <i class="ph-bold ph-certificate"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-100">Professional Certifications</h3>
+                        </div>
+
+                        <div class="space-y-4">
+                            
+                            <!-- Cert 1 -->
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-bold text-slate-100">Claude Certified Associate</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Anthropic • Foundations</p>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold shrink-0">
+                                    Certified
+                                </span>
+                            </div>
+
+                            <!-- Cert 2 -->
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-bold text-slate-100">Certified System Architect (CSA)</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Pega Systems</p>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold shrink-0">
+                                    Certified
+                                </span>
+                            </div>
+
+                            <!-- Cert 3 -->
+                            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-bold text-slate-100">AWS Certified Cloud Practitioner / Amazon Connect Specialist</h4>
+                                    <p class="text-xs text-slate-400 mt-0.5">Amazon Web Services</p>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold shrink-0">
+                                    In-Progress
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Education Card -->
+                    <div class="glass-card p-6 sm:p-8 rounded-2xl relative flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-400 text-2xl">
+                                    <i class="ph-bold ph-graduation-cap"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-100">Education</h3>
+                            </div>
+
+                            <div class="p-5 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <span class="text-xs font-mono text-cyan-400 font-semibold block mb-1">GRADUATED</span>
+                                <h4 class="text-lg font-bold text-slate-100">Bachelor of Technology (B.Tech)</h4>
+                                <p class="text-slate-300 font-medium text-sm mt-1">Electronics & Communication Engineering (ECE)</p>
+                                <p class="text-xs text-slate-400 mt-2">Anna University, India</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-4 rounded-xl bg-gradient-to-r from-cyan-950/40 to-indigo-950/40 border border-cyan-800/30">
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                <strong class="text-cyan-400">Engineering Foundation:</strong> My degree in ECE provided the fundamental signal processing and telecommunications logic that underpins modern cloud contact centers and automated IVR voice processing systems.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 relative">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden text-center gradient-glow">
+                    <div class="absolute -top-12 -left-12 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl"></div>
+                    
+                    <h2 class="text-xs font-mono font-semibold tracking-widest text-cyan-400 uppercase mb-3">Connect Directly</h2>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-100 mb-4">Ready to Elevate Your IVR & Cloud QA?</h3>
+                    <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base mb-8">
+                        I am available for senior quality engineering leadership roles with immediate joining availability. Reach out via email or telephone to discuss options.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
+                        <a href="mailto:Vigneshgunasekaran09@gmail.com" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20">
+                            <i class="ph-bold ph-paper-plane-tilt text-lg"></i>
+                            <span>Send Email</span>
+                        </a>
+
+                        <button onclick="copyToClipboard('Vigneshgunasekaran09@gmail.com', 'Email copied!')" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold transition-all flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-copy text-lg text-cyan-400"></i>
+                            <span>Vigneshgunasekaran09@gmail.com</span>
+                        </button>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-bold ph-phone text-cyan-400"></i>
+                            <span>+91-9500259538</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-bold ph-map-pin text-cyan-400"></i>
+                            <span>Chennai, TN, India</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-bold ph-clock text-emerald-400"></i>
+                            <span class="text-emerald-400 font-medium">Immediate Availability</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 border-t border-slate-800/80 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>© <span id="year"></span> Vignesh Gunasekaran. Designed for Enterprise Contact Center & QA Excellence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Copy to Clipboard Utility
+        function copyToClipboard(text, customMessage) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand('copy');
+                showToast(customMessage || 'Copied to clipboard!');
+            } catch (err) {
+                console.error('Failed to copy', err);
+            }
+            
+            document.body.removeChild(tempInput);
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Filterable Skill Cards Logic
+        function filterSkills(category) {
+            const cards = document.querySelectorAll('.skill-card');
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            // Update Tab Active Styling
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-category') === category) {
+                    tab.className = "tab-btn active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all bg-cyan-500 text-slate-950 font-bold shadow-md shadow-cyan-500/20";
+                } else {
+                    tab.className = "tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all glass-card hover:bg-slate-800 text-slate-300";
+                }
+            });
+
+            // Filter Cards
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 200);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
